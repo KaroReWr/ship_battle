@@ -1,6 +1,5 @@
 from copy import copy
 
-
 class Ship:
 
     def get_start_coordinates(self):
@@ -40,11 +39,15 @@ class Ship:
 
 
 masts = [4, 3, 3, 2, 2, 2, 1, 1, 1, 1]
+def create_armada(item_number):
+    armada = []
+    for number in range(item_number):
+        ship_baze = Ship()
+        armada.append(ship_baze.get_ship_with_all_data())
+    return armada
 
 
 if __name__ == '__main__':
-    a = Ship()
-    print(a.get_ship_with_all_data())
-
-
+    flota = create_armada(10)
+    print(flota)
 

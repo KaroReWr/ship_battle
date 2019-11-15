@@ -1,7 +1,5 @@
 from ship_factory import Ship
-from ship_Battle_Board import Board
-
-
+from battle_board_creation import Board
 
 karo_board = Board(0,10)
 
