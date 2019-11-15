@@ -38,6 +38,9 @@ class Board:
     def bingo(self, x, y):
         self.water_board[x][y] = "T"
 
+    def getCordinate(self, x, y):
+       return self.water_board[x][y]
+
 
 if __name__ == '__main__':
     moja = Board(0, 10)
