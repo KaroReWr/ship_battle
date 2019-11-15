@@ -1,3 +1,5 @@
+import ship_factory
+
 class Board:
     water_board = []
 
@@ -23,6 +25,18 @@ class Board:
 
     def shoot_return_field(self,x,y):
         return self.water_board[x][y]
+
+    def add_coordinate(self,x,y):
+        if self.water_board[x][y] != ".":
+            return "Change the coordinate, ship is already there."
+        else:
+            self.water_board[x][y] = "S"
+
+    def nope(self, x,y):
+        self.water_board[x][y] = "P"
+
+    def bingo(self, x, y):
+        self.water_board[x][y] = "T"
 
 
 if __name__ == '__main__':
