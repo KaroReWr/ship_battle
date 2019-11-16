@@ -15,8 +15,9 @@ class Board:
         return self
 
     def print_water_board(self):
+        print("  A  B  C  D  E  F  G  H  I  J ")
         for i in range(self.beginning, len(self.water_board)):
-            row = ""
+            row = str(i)
             for j in range(self.beginning, len(self.water_board)):
                 row += " " + str(self.water_board[i][j]) + " "
             print(row)
@@ -32,8 +33,8 @@ class Board:
                     row += " " + str(self.water_board[i][j]) + " "
             print(row)
 
-    def shoot_return_field(self,x,y):
-        return self.water_board[x][y]
+    def getCordinate(self, x, y):
+       return self.water_board[x][y]
 
     def add_coordinate(self,x,y):
         if self.water_board[x][y] != ".":
@@ -41,14 +42,15 @@ class Board:
         else:
             self.water_board[x][y] = "S"
 
+    def shoot_return_field(self,x,y):
+        return self.water_board[x][y]
+
     def nope(self, x,y):
         self.water_board[x][y] = "P"
 
     def bingo(self, x, y):
         self.water_board[x][y] = "T"
 
-    def getCordinate(self, x, y):
-       return self.water_board[x][y]
 
 
 if __name__ == '__main__':
