@@ -24,8 +24,9 @@ class Board:
 
 
     def print_shadow_board(self):
+        print("  A  B  C  D  E  F  G  H  I  J ")
         for i in range(self.beginning, len(self.water_board)):
-            row = ""
+            row = str(i)
             for j in range(self.beginning, len(self.water_board)):
                 if str(self.water_board[i][j]) == "S":
                     row += " . "
