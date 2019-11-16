@@ -1,12 +1,10 @@
 import ship_factory
 
 class Board:
-    water_board = []
-
-
     def __init__(self, beginning, the_end):
         self.beginning = beginning
         self.the_end = the_end
+        self.water_board = []
 
     def new_board(self):
         for row in range(0, self.the_end):
