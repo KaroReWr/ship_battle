@@ -18,14 +18,37 @@ def add_pack_of_the_ships(board,armada):
             y = coord[1]
             board.add_coordinate(x,y)
 
+def change_coord_from_num_to_letters(x,coordinate_to_change):
+    if coordinate_to_change == "A":
+        return 0
+    if coordinate_to_change == "B":
+        return 1
+    if coordinate_to_change == "C":
+        return 2
+    if coordinate_to_change == "D":
+        return 3
+    if coordinate_to_change == "E":
+        return 4
+    if coordinate_to_change == "F":
+        return 5
+    if coordinate_to_change == "G":
+        return 6
+    if coordinate_to_change == "H":
+        return 7
+    if coordinate_to_change == "I":
+        return 8
+    if coordinate_to_change == "J":
+        return 9
 
 
 if __name__ == '__main__':
-    add_pack_of_the_ships(karo_board,armada_karo)
-    add_pack_of_the_ships(jacek_board,armada_jacek)
-    karo_board.print_water_board()
-    print(" " * 20)
-    print("-" * 30)
-    print(" " * 20)
-    jacek_board.print_shadow_board()
+    #add_pack_of_the_ships(karo_board,armada_karo)
+    #add_pack_of_the_ships(jacek_board,armada_jacek)
+    #karo_board.print_water_board()
+    #print(karo_board.getCordinate(8,0))
+    #print(" " * 20)
+    #print("-" * 30)
+    #print(" " * 20)
+    jacek_board.getCordinate(1,"A")
+
 
