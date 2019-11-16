@@ -10,7 +10,7 @@ class Ship:
         return first_ship_coordinates
 
     def get_mast_number(self):
-        mast_number = int(input("How many masts do you need for this sheep? "))
+        mast_number = int(input("How many masts do you need for this ship? "))
         return mast_number
 
     def get_ship_position(self):
@@ -47,7 +47,6 @@ def create_armada(item_number):
     return armada
 
 
-if __name__ == '__main__':
-    flota = create_armada(10)
-    print(flota)
 
+if __name__ == '__main__':
+    pass

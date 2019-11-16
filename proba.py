@@ -21,3 +21,5 @@ def create_ship_new_way(first_mast_coordinates: list, position: str, mast_number
 
 if __name__ == '__main__':
     print(create_ship_new_way([1,1],"h",3))
+
+

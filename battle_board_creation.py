@@ -23,6 +23,17 @@ class Board:
                 row += " " + str(self.water_board[i][j]) + " "
             print(row)
 
+
+    def print_shadow_board(self):
+        for i in range(self.beginning, len(self.water_board)):
+            row = ""
+            for j in range(self.beginning, len(self.water_board)):
+                if str(self.water_board[i][j]) == "S":
+                    row += " . "
+                else:
+                    row += " " + str(self.water_board[i][j]) + " "
+            print(row)
+
     def shoot_return_field(self,x,y):
         return self.water_board[x][y]
 
