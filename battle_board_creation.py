@@ -1,5 +1,6 @@
 import ship_factory
 
+
 class Board:
     def __init__(self, beginning, the_end):
         self.beginning = beginning
@@ -34,8 +35,7 @@ class Board:
                     row += " " + str(self.water_board[i][j]) + " "
             print(row)
 
-    def getCordinate(self, x, y):
-       return self.water_board[x][y]
+
 
     def add_coordinate(self,x,y):
         if self.water_board[x][y] != ".":
@@ -44,6 +44,7 @@ class Board:
             self.water_board[x][y] = "S"
 
     def shoot_return_field(self,x,y):
+        y = change_coord_from_num_to_letters(y)
         return self.water_board[x][y]
 
     def nope(self, x,y):
@@ -52,9 +53,30 @@ class Board:
     def bingo(self, x, y):
         self.water_board[x][y] = "T"
 
+def change_coord_from_num_to_letters(coordinate_to_change):
+    if coordinate_to_change == "A":
+        return 0
+    if coordinate_to_change == "B":
+        return 1
+    if coordinate_to_change == "C":
+        return 2
+    if coordinate_to_change == "D":
+        return 3
+    if coordinate_to_change == "E":
+        return 4
+    if coordinate_to_change == "F":
+        return 5
+    if coordinate_to_change == "G":
+        return 6
+    if coordinate_to_change == "H":
+        return 7
+    if coordinate_to_change == "I":
+        return 8
+    if coordinate_to_change == "J":
+        return 9
 
 
 if __name__ == '__main__':
     moja = Board(0, 10)
     moja.new_board()
-    print(moja.shoot_return_field(0,2))
+    print(moja.shoot_return_field(0,"D"))
