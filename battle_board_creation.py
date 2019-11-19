@@ -44,7 +44,7 @@ class Board:
             self.water_board[x][y] = "S"
 
     def shoot_return_field(self,x,y):
-        y = change_coord_from_num_to_letters(y)
+        y = letter_to_number(y)
         return self.water_board[x][y]
 
     def nope(self, x,y):
@@ -53,30 +53,34 @@ class Board:
     def bingo(self, x, y):
         self.water_board[x][y] = "T"
 
-def change_coord_from_num_to_letters(coordinate_to_change):
-    if coordinate_to_change == "A":
-        return 0
-    if coordinate_to_change == "B":
-        return 1
-    if coordinate_to_change == "C":
-        return 2
-    if coordinate_to_change == "D":
-        return 3
-    if coordinate_to_change == "E":
-        return 4
-    if coordinate_to_change == "F":
-        return 5
-    if coordinate_to_change == "G":
-        return 6
-    if coordinate_to_change == "H":
-        return 7
-    if coordinate_to_change == "I":
-        return 8
-    if coordinate_to_change == "J":
-        return 9
+    def get_coordinate(self,x,y):
+        print(x,y)
+        return self.water_board[self.letter_to_number(x)][y]
+
+    def letter_to_number(self,coordinate_to_change):
+        if coordinate_to_change == "A":
+            return 0
+        if coordinate_to_change == "B":
+            return 1
+        if coordinate_to_change == "C":
+            return 2
+        if coordinate_to_change == "D":
+            return 3
+        if coordinate_to_change == "E":
+            return 4
+        if coordinate_to_change == "F":
+            return 5
+        if coordinate_to_change == "G":
+            return 6
+        if coordinate_to_change == "H":
+            return 7
+        if coordinate_to_change == "I":
+            return 8
+        if coordinate_to_change == "J":
+            return 9
+        return coordinate_to_change
 
 
 if __name__ == '__main__':
     moja = Board(0, 10)
     moja.new_board()
-    print(moja.shoot_return_field(0,"D"))
