@@ -55,7 +55,9 @@ class Board:
 
     def get_coordinate(self,x,y):
         print(x,y)
-        return self.water_board[self.letter_to_number(x)][y]
+        xx = self.letter_to_number(x)
+        print(xx)
+        return self.water_board[xx][y]
 
     def letter_to_number(self,coordinate_to_change):
         if coordinate_to_change == "A":
