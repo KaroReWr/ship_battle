@@ -1,11 +1,15 @@
 from copy import copy
 
+import battle_board_creation
+
 class Ship:
+
 
     def get_start_coordinates(self):
         first_ship_coordinates = []
-        coordinates = input("What are coordinates for first ship (format xy): ")
-        first_ship_coordinates.append(int(coordinates[0]))
+        coordinates = input("What are coordinates for first ship (format 'LETTERnumber'): ")
+        coordinate_x_letter_to_num = letter_to_number(coordinates[0])
+        first_ship_coordinates.append(coordinate_x_letter_to_num)
         first_ship_coordinates.append(int(coordinates[1]))
         return first_ship_coordinates
 
@@ -19,7 +23,7 @@ class Ship:
 
 
     def get_ship_with_all_data(self):
-        start_coordinate = Ship.get_start_coordinates(self)
+        start_coordinate = Ship.get_start_coordinates
         mast_number = Ship.get_mast_number(self)
         position = Ship.get_ship_position(self)
         ship = [start_coordinate]
@@ -46,7 +50,32 @@ def create_armada(item_number):
         armada.append(ship_baze.get_ship_with_all_data())
     return armada
 
+def letter_to_number(coordinate_to_change):
+    if coordinate_to_change == "A":
+        return 0
+    if coordinate_to_change == "B":
+        return 1
+    if coordinate_to_change == "C":
+        return 2
+    if coordinate_to_change == "D":
+        return 3
+    if coordinate_to_change == "E":
+        return 4
+    if coordinate_to_change == "F":
+        return 5
+    if coordinate_to_change == "G":
+        return 6
+    if coordinate_to_change == "H":
+        return 7
+    if coordinate_to_change == "I":
+        return 8
+    if coordinate_to_change == "J":
+        return 9
+    return coordinate_to_change
 
 
 if __name__ == '__main__':
-    pass
+    a = Ship()
+    #print(a.get_start_coordinates())
+    print(battle_board_creation)
+    print(battle_board_creation.__file__)
