@@ -1,6 +1,3 @@
-import ship_factory
-
-
 class Board:
     def __init__(self, beginning, the_end):
         self.beginning = beginning
@@ -82,7 +79,6 @@ def letter_to_number(coordinate_to_change):
 
 
 if __name__ == '__main__':
-    moja = Board(0, 10)
-    moja.get_coordinate("A", 2)
-    print(ship_factory)
-    print(ship_factory.__file__)
+    board = Board(0, 10)
+    board.new_board()
+    board.get_coordinate("A", 2)
