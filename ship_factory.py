@@ -22,24 +22,29 @@ def get_ship_position():
     return position
 
 
-def get_ship_with_all_data(self):
-    start_coordinate = self.get_start_coordinates()
-    mast_number = self.get_mast_number(self)
-    position = self.get_ship_position(self)
-    ship = [start_coordinate]
+def get_ship_with_all_data():
+    start_coordinate = get_start_coordinates()
+    mast_number = get_mast_number()
+    position = get_ship_position()
+
     if mast_number == 1:
-        return ship
+        return [start_coordinate]
+
+    add_x = add_y = 0
+
+    ship_to_return = []
     if position == "v":
-        for mast in range(mast_number - 1):
-            base = copy(start_coordinate)
-            base[1] = base[1] + mast + 1
-            ship.append(base)
-    if position == "h":
-        for mast in range(mast_number - 1):
-            base = copy(start_coordinate)
-            base[0] = base[0] + mast + 1
-            ship.append(base)
-    return ship
+        add_y = 1
+    else:
+        add_x = 0
+
+    for mast in range(mast_number):
+        start_coordinate[0] += add_x
+        start_coordinate[1] += add_y
+        base = copy(start_coordinate)
+        ship_to_return.append(base)
+
+    return ship_to_return
 
 
 def create_armada(item_number):
@@ -47,4 +52,3 @@ def create_armada(item_number):
     for number in range(item_number):
         armada.append(get_ship_with_all_data())
     return armada
-
