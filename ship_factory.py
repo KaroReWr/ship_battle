@@ -36,14 +36,14 @@ def get_ship_with_all_data():
     if position == "v":
         add_y = 1
     else:
-        add_x = 0
+        add_x = 1
 
     for mast in range(mast_number):
-        start_coordinate[0] += add_x
-        start_coordinate[1] += add_y
+        start_coordinate[0] += add_x * mast
+        start_coordinate[1] += add_y * mast
         base = copy(start_coordinate)
         ship_to_return.append(base)
-
+    print(ship_to_return)
     return ship_to_return
 
 
@@ -52,3 +52,6 @@ def create_armada(item_number):
     for number in range(item_number):
         armada.append(get_ship_with_all_data())
     return armada
+
+if __name__ == '__main__':
+    get_ship_with_all_data()
