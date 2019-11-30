@@ -14,11 +14,15 @@ def get_start_coordinates():
 
 def get_mast_number():
     mast_number = int(input("How many masts do you need for this ship? "))
+    while not 0 < mast_number < 5:
+        print("Incorrect number of masts! Select number 1,2,3 or 4")
     return mast_number
 
 
 def get_ship_position():
     position = input("What should be position for the ship? Vertical or horizontal?\n Select v/h: ")
+    while position != "v" or position != "h":
+        print("Incorrect position. Please select 'v' or 'h'.")
     return position
 
 
@@ -30,11 +34,7 @@ def get_all_data_for_ship():
 
 
 def create_ship(start_coordinate=None, mast_number=None, position=None):
-    if start_coordinate is None:
-        all_data = get_all_data_for_ship()
-        start_coordinate = all_data[0]
-        mast_number = all_data[1]
-        position = all_data[2]
+    mast_number, position, start_coordinate = get_coordinates_if_none_is_given(mast_number, position, start_coordinate)
 
     if mast_number == 1:
         return [start_coordinate]
@@ -44,7 +44,7 @@ def create_ship(start_coordinate=None, mast_number=None, position=None):
     ship_to_return = []
     if position == "v":
         add_y = 1
-    else:
+    elif position == "h":
         add_x = 1
 
     for mast in range(mast_number):
@@ -56,6 +56,15 @@ def create_ship(start_coordinate=None, mast_number=None, position=None):
     return ship_to_return
 
 
+def get_coordinates_if_none_is_given(mast_number, position, start_coordinate):
+    if start_coordinate is None:
+        all_data = get_all_data_for_ship()
+        start_coordinate = all_data[0]
+        mast_number = all_data[1]
+        position = all_data[2]
+    return mast_number, position, start_coordinate
+
+
 def create_armada(item_number):
     armada = []
     for number in range(item_number):
@@ -63,4 +72,4 @@ def create_armada(item_number):
     return armada
 
 if __name__ == '__main__':
-    print(create_ship([0,1], 4, "h"))
+    print(get_coordinates_if_none_is_given(None, None, None))
