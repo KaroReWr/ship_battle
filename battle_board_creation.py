@@ -48,10 +48,17 @@ class Board:
         self.water_board[x][y] = "T"
 
     def get_coordinate(self, x, y):
-        print(x, y)
         xx = letter_to_number(x)
-        print(xx)
         return self.water_board[xx][y]
+
+    def get_coordinate_line(self, x, y):
+        xx = letter_to_number(x)
+        line = str(x) + str(y) + self.get_coordinate(xx, y)
+        return line
+
+    def set_coordinate(self, x, y, value):
+        xx = letter_to_number(x)
+        self.water_board[xx][y] = value
 
 
 def letter_to_number(coordinate_to_change):
