@@ -20,6 +20,15 @@ class Board:
                 row += " " + str(self.water_board[i][j]) + " "
             print(row)
 
+    def return_flat_board(self):
+        flat_board = ""
+        for i in range(self.beginning, len(self.water_board)):
+            row = str(i)
+            for j in range(self.beginning, len(self.water_board)):
+                row += " " + str(self.water_board[i][j]) + " "
+            flat_board += row
+        return flat_board
+
     def print_shadow_board(self):
         print("  A  B  C  D  E  F  G  H  I  J ")
         for i in range(self.beginning, len(self.water_board)):
@@ -30,6 +39,7 @@ class Board:
                 else:
                     row += " " + str(self.water_board[i][j]) + " "
             print(row)
+
 
     def add_coordinate(self, x, y):
         if self.water_board[x][y] != ".":
