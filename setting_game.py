@@ -19,7 +19,7 @@ if __name__ == '__main__':
     jacek_board = Board(0, 10)
     jacek_board.new_board()
     add_pack_of_the_ships(jacek_board, armada_jacek)
-    jacek_board.print_water_board()
+    # jacek_board.print_water_board()
     add_pack_of_the_ships(karo_board, armada_karo)
     player1_board = karo_board
     player1 = open("player1.txt", "w")
@@ -28,6 +28,9 @@ if __name__ == '__main__':
     player2 = open("player2.txt", "w")
     player2.writelines(jacek_board.return_flat_board())
     player2.close()
+    player1 = open("player1.txt", "r")
+    board_karo = player1.read()
+    print(board_karo)
 
 
 
