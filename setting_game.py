@@ -29,8 +29,12 @@ if __name__ == '__main__':
     player2.writelines(jacek_board.return_flat_board())
     player2.close()
     player1 = open("player1.txt", "r")
-    board_karo = player1.read()
-    print(board_karo)
+    linia = player1.readline()
+    print(linia)
+
+
+
+
 
 
 

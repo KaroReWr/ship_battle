@@ -17,7 +17,7 @@ class Board:
         for i in range(self.beginning, len(self.water_board)):
             row = str(i)
             for j in range(self.beginning, len(self.water_board)):
-                row += " " + str(self.water_board[i][j]) + " "
+                row += "" + str(self.water_board[i][j]) + ""
             print(row)
 
     def return_flat_board(self):
@@ -25,7 +25,7 @@ class Board:
         for i in range(self.beginning, len(self.water_board)):
             row = str(i)
             for j in range(self.beginning, len(self.water_board)):
-                row += " " + str(self.water_board[i][j]) + " "
+                row += "" + str(self.water_board[i][j]) + ""
             flat_board += row
         return flat_board
 
@@ -35,9 +35,9 @@ class Board:
             row = str(i)
             for j in range(self.beginning, len(self.water_board)):
                 if str(self.water_board[i][j]) == "S":
-                    row += " . "
+                    row += "."
                 else:
-                    row += " " + str(self.water_board[i][j]) + " "
+                    row += "" + str(self.water_board[i][j]) + ""
             print(row)
 
 
