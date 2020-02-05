@@ -30,7 +30,11 @@ if __name__ == '__main__':
     player2.close()
     player1 = open("player1.txt", "r")
     linia = player1.readline()
-    print(linia)
+    y=0
+    for i in range(0,11):
+        x=y
+        y=y+11
+        print(linia[x:y])
 
 
 
