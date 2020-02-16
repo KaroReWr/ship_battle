@@ -54,7 +54,7 @@ class Board:
     def nope(self, x, y):
         self.water_board[x][y] = "P"
 
-    def bingo(self, x, y):
+    def trafiony(self, x, y):
         self.water_board[x][y] = "T"
 
     def get_coordinate(self, x, y):
